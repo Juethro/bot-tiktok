@@ -143,10 +143,10 @@ if __name__ == "__main__":
     threading.Thread(target=rpsm_loop).start()
     threading.Thread(target=title_loop).start()
 
-    with open('TikTok-ViewBot\device.txt', 'r') as f:
+    with open('device.txt', 'r') as f:
         devices = f.read().splitlines()
     
-    with open('TikTok-ViewBot\config.json', 'r') as f:
+    with open('config.json', 'r') as f:
         config = json.load(f)
     proxy_format = f'{config["proxy"]["proxy-type"].lower()}://{config["proxy"]["credential"]+"@" if config["proxy"]["auth"] else ""}' if config['proxy']['use-proxy'] else ''
     if config['proxy']['use-proxy']:
